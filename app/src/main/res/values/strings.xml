@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">final project</string>
+    <string name="sign_in1">Sign in</string>
+    <string name="enter_phone_number1">Enter phone number</string>
+    <string name="enter_password1">Enter password</string>
+    <string name="login1">Login</string>
+    <string name="register1">Register</string>
+    <string name="sign_up1">Sign Up</string>
+    <string name="user_name1">User Name</string>
+    <string name="enter_upazila_name1">Enter Upazila name</string>
+    <string name="enter_email1">Enter Email</string>
+    <string name="give_a_password1">Give a Password</string>
+    <string name="confirm_password1">Confirm Password</string>
+    <string name="phone_number1">Phone Number</string>
+    <string name="register2">Register</string>
+    <string name="log_in1">Log In</string>
+    <string name="recipe_master1">Recipe Master</string>
+    <string name="search_icon1">Search Icon</string>
+    <string name="search_for_recipes1">Search for recipes...</string>
 </resources>
