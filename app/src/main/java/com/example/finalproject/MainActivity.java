@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         TextView txtGreetingTextView1 = findViewById(R.id.txt_greetingTextView1);
         Button btStartButton = findViewById(R.id.bt_startButton);
 
+        // Set click listener to navigate to RegiLoginActivity
         btStartButton.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, RegiLoginActivity.class);
             startActivity(intent); // Navigate to RegiLoginActivity

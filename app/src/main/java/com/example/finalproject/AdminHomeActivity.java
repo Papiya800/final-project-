@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class AdminHomeActivity extends AppCompatActivity {
 
-    private Button btnInsertAdmin, btnViewAdmin;
+    private Button btnInsertRecipe, btnViewAdmin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,15 +16,15 @@ public class AdminHomeActivity extends AppCompatActivity {
         setContentView(R.layout.admin_home_activity);
 
         // Buttons Initialization
-        btnInsertAdmin = findViewById(R.id.btn_insert_admin);
+        btnInsertRecipe = findViewById(R.id.btn_insert_admin); // Button renamed for Insert Recipe
         btnViewAdmin = findViewById(R.id.btn_view_admin);
 
         // Set Click Listeners
-        btnInsertAdmin.setOnClickListener(new View.OnClickListener() {
+        btnInsertRecipe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Navigate to Insert Admin Activity
-                Intent intent = new Intent(AdminHomeActivity.this, InsertAdminActivity.class);
+                // Navigate to Insert Recipe Activity
+                Intent intent = new Intent(AdminHomeActivity.this, InsertRecipeActivity.class);
                 startActivity(intent);
             }
         });

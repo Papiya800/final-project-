@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -14,17 +13,16 @@
         android:layout_width="260dp"
         android:layout_height="245dp"
         android:layout_gravity="center"
-        android:layout_marginTop="0dp"
+        android:contentDescription="@string/todo"
         android:src="@drawable/img_2" />
 
     <TextView
         android:id="@+id/txt_greetingTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
         android:gravity="center"
         android:padding="10dp"
-        android:text="Greeting you to Recipe Master"
+        android:text="@string/greeting_you_to_recipe_master"
         android:textColor="#090707"
         android:textSize="25sp"
         android:textStyle="bold" />
@@ -34,20 +32,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:text=" Discover easy, delicious recipes and cook like a pro."
-        android:layout_marginTop="20dp"
+        android:text="@string/discover_easy_delicious_recipes_and_cook_like_a_pro"
         android:textColor="#121111"
         android:textSize="19.5sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:layout_marginTop="20dp" />
+
     <Button
         android:id="@+id/bt_startButton"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:padding="15dp"
-        android:textSize="16sp"
         android:layout_gravity="center"
-        android:text="Go with Recipe Master"
-        android:layout_marginTop="16dp"
-
-        android:backgroundTint="#6E4EA6"/>
+        android:text="@string/go_with_recipe_master"
+        android:textSize="16sp"
+        android:backgroundTint="#6E4EA6"
+        android:layout_marginTop="16dp" />
 </LinearLayout>

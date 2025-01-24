@@ -8,4 +8,6 @@
     <item name="bt_sign_up_Button" type="id" />
     <item name="bt_sign_up_login_Button" type="id" />
     <item name="tv_sign_up" type="id" />
+    <item name="et_userName" type="id" />
+    <item name="et_userPhone" type="id" />
 </resources>

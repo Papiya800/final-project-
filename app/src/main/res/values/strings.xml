@@ -1,20 +1,46 @@
-<resources>
-    <string name="app_name">final project</string>
-    <string name="sign_in1">Sign in</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="recipe_master" tools:ignore="DuplicateDefinition">Final Project</string>
+    <string name="sign_in1">Sign In</string>
     <string name="enter_phone_number1">Enter phone number</string>
     <string name="enter_password1">Enter password</string>
     <string name="login1">Login</string>
     <string name="register1">Register</string>
-    <string name="sign_up1">Sign Up</string>
-    <string name="user_name1">User Name</string>
-    <string name="enter_upazila_name1">Enter Upazila name</string>
-    <string name="enter_email1">Enter Email</string>
-    <string name="give_a_password1">Give a Password</string>
-    <string name="confirm_password1">Confirm Password</string>
-    <string name="phone_number1">Phone Number</string>
-    <string name="register2">Register</string>
-    <string name="log_in1">Log In</string>
+    <string name="search_icon" />
+    <string name="search_for_recipes" />
+
+
+    <!-- General Strings -->
+    <string name="app_name">Final Project</string>
     <string name="recipe_master1">Recipe Master</string>
     <string name="search_icon1">Search Icon</string>
-    <string name="search_for_recipes1">Search for recipes...</string>
+    <string name="search_for_recipes1">Search for recipes</string>
+
+    <!-- Categories -->
+    <string name="categories">Categories:</string>
+    <string name="breakfast">Breakfast</string>
+    <string name="lunch">Lunch</string>
+    <string name="dinner">Dinner</string>
+    <string name="dessert">Dessert</string>
+    <string name="sign_up1" />
+    <string name="log_in">Log In</string>
+    <string name="register">Register</string>
+    <string name="Register" />
+    <string name="sign_up">Sign Up</string>
+    <string name="user_name">User Name</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="give_a_password">Give a Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="greeting_you_to_recipe_master">Greeting you to Recipe Master</string>
+    <string name="discover_easy_delicious_recipes_and_cook_like_a_pro">Discover easy, delicious recipes and cook like a pro.</string>
+    <string name="go_with_recipe_master">Go with Recipe Master</string>
+    <string name="todo">TODO</string>
+    <string name="insert_recipe">Insert Recipe</string>
+    <string name="recipe_name">Recipe Name</string>
+    <string name="ingredients_comma_separated">Ingredients (comma-separated)</string>
+    <string name="steps">Steps</string>
+    <string name="save_recipe">Save Recipe</string>
+    <string name="breakfast_menu">Breakfast Menu</string>
+
+
 </resources>
