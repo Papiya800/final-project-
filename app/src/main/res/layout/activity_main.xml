@@ -1,19 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="30dp"
+    android:background="@drawable/img_1"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/img_greetingImageView"
+        android:layout_width="260dp"
+        android:layout_height="245dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="0dp"
+        android:src="@drawable/img_2" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/txt_greetingTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Greeting you to Recipe Master"
+        android:textColor="#090707"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txt_greetingTextView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text=" Discover easy, delicious recipes and cook like a pro."
+        android:layout_marginTop="20dp"
+        android:textColor="#121111"
+        android:textSize="19.5sp"
+        android:textStyle="bold"/>
+    <Button
+        android:id="@+id/bt_startButton"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:textSize="16sp"
+        android:layout_gravity="center"
+        android:text="Go with Recipe Master"
+        android:layout_marginTop="16dp"
+
+        android:backgroundTint="#6E4EA6"/>
+</LinearLayout>

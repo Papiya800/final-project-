@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="et_email" type="id" />
+    <item name="et_name" type="id" />
+    <item name="et_Give_password" type="id" />
+    <item name="et_Confirm_password" type="id" />
+    <item name="et_user_phone" type="id" />
+    <item name="bt_sign_up_Button" type="id" />
+    <item name="bt_sign_up_login_Button" type="id" />
+    <item name="tv_sign_up" type="id" />
+</resources>
