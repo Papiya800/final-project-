@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Set click listener to navigate to RegiLoginActivity
         btStartButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, RegiLoginActivity.class);
+            Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
             startActivity(intent); // Navigate to RegiLoginActivity
         });
     }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -9,14 +10,56 @@
     android:padding="20dp"
     tools:context=".MainActivity">
 
-  <TextView
-      android:id="@+id/txt_quesadilla"
+  <ScrollView
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:padding="10dp"
-      android:layout_marginBottom="10dp"
-      android:text="Ingredients:\nEggs\nMilk\nGreen pepper\nUnsalted butter\nBacon\nShredded cheddar cheese\nTortillas\n\nSteps:\nFirst, whisk the eggs and milk together.\nAdd the green pepper and stir to combine.\nAdd butter to a heated skillet and cook the eggs until soft.\nPlace one tortilla on the skillet, top with shredded cheese, followed by the eggs, bacon, and more cheese.\nPlace the second tortilla on top of the egg mixture and lightly press down to seal. Heat for 2-3 minutes on both sides, or until cheese is melted."
-      android:textColor="#030303"
-      android:textSize="15sp"
-      android:textStyle="normal" />
+      android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+      <!-- Ingredients Section -->
+      <TextView
+          android:id="@+id/txt_ingredients_label"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:paddingBottom="10dp"
+          android:text="Ingredients"
+          android:textColor="#6200EE"
+          android:textSize="18sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/txt_ingredients"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:paddingBottom="20dp"
+          android:text="Eggs\nMilk\nGreen pepper\nUnsalted butter\nBacon\nShredded cheddar cheese\nTortillas"
+          android:textColor="#000000"
+          android:textSize="15sp" />
+
+      <!-- Instructions Section -->
+      <TextView
+          android:id="@+id/txt_instructions_label"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:paddingBottom="10dp"
+          android:text="Steps"
+          android:textColor="#6200EE"
+          android:textSize="18sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/txt_instructions"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:paddingBottom="20dp"
+          android:text="1. First, whisk the eggs and milk together.\n\n2. Add the green pepper and stir to combine.\n\n3. Add butter to a heated skillet and cook the eggs until soft.\n\n4. Place one tortilla on the skillet, top with shredded cheese, followed by the eggs, bacon, and more cheese.\n\n5. Place the second tortilla on top of the egg mixture and lightly press down to seal.\n\n6. Heat for 2-3 minutes on both sides, or until cheese is melted."
+          android:textColor="#000000"
+          android:textSize="15sp" />
+
+    </LinearLayout>
+  </ScrollView>
 </LinearLayout>

@@ -33,7 +33,7 @@ public class AdminHomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Navigate to View/Delete/Update Admin Activity
-                Intent intent = new Intent(AdminHomeActivity.this, ViewAdminActivity.class);
+                Intent intent = new Intent(AdminHomeActivity.this, ViewRecipeActivity.class);
                 startActivity(intent);
             }
         });

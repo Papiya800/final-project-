@@ -40,22 +40,22 @@ public class BreakfastMenuActivity extends AppCompatActivity {
             }
         });
 
-//        // Set click listener for Chana Dal button
-//        btnChanaDal.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(BreakfastMenuActivity.this, ChanaDalActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-//
-//        // Set click listener for Chicken Mughlai Porota Recipe button
-//        btnChickenMughlaiPorotaRecipe.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(BreakfastMenuActivity.this, ChickenMughlaiPorotaActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+       // Set click listener for Chana Dal button
+        btnChanaDal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               Intent intent = new Intent(BreakfastMenuActivity.this, ChanaDalActivity.class);
+               startActivity(intent);
+            }
+       });
+
+        // Set click listener for Chicken Mughlai Porota Recipe button
+        btnChickenMughlaiPorotaRecipe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BreakfastMenuActivity.this, ChickenMughlaiPorotaActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

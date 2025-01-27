@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <!-- Ingredients Section -->
+            <TextView
+                android:id="@+id/txt_ingredients_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:text="Ingredients"
+                android:textColor="#6200EE"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_ingredients"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="20dp"
+                android:text="Filling\n\n2 tbsp cooking oil\n1 medium onion\n2 small cinnamon sticks\n½ tsp garlic paste\n1 tsp ginger paste\n500 g minced chicken\n1 tsp salt\n½ tsp turmeric\n½ tsp roasted cumin\n½ tsp red chili\n2 tbsp lime juice\n1 egg\n1 tsp onion\n1 tsp fresh coriander\n1 tsp green chili\n\nPorota\n\n3 cups ap flour\n½ tsp salt\n2 tbsp cooking oil\n1 cup + 2 tbsp water"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <!-- Instructions Section -->
+            <TextView
+                android:id="@+id/txt_instructions_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:text="Instructions"
+                android:textColor="#6200EE"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_instructions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="20dp"
+                android:text="1. Start off by adding cooking oil in a large pot\n\n2. Stir in chopped onion, cinnamon sticks, garlic, and ginger paste\n\n3. Add 500 grams of minced chicken into the pot\n\n4. Mix in salt, turmeric, roasted cumin, and red chili\n\n5. Cook the minced chicken for 7 to 8 minutes\n\n6. Pour in lime juice and remove the chicken from heat and set aside\n\n7. Prepare the porota by adding ap flour in a large clear bowl\n\n8. Mix in salt, cooking oil, and water \n\n9. Knead a soft dough\n\n10. Coat the dough in cooking oil and set aside for it to rest 15 minutes\n\n11. Cut dough into 6 even pieces\n\n12. Roll out the dough \n\n13. Crack an egg and whisk in chopped onion, fresh coriander and green chilies\n\n14. Pour the whisked egg onto the porota and spread evenly\n\n15. Place the cooked chicken on top of the egg spread\n\n16. Fold the porota and fry in a pan with a drizzle of cooking oil for 6 to 7 minutes on low-medium heat\n\n17. Remove the porota from heat and cut into small square pieces before serving \n\n18. Ready to enjoy!"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

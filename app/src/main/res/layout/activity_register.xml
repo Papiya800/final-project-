@@ -10,6 +10,7 @@
     android:padding="25dp"
     android:background="@drawable/img_4"
     tools:context=".MainActivity">
+
     <TextView
         android:id="@+id/tv_sign_up"
         android:layout_width="match_parent"
@@ -76,6 +77,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Register"
+        android:textSize="18sp"
+        android:backgroundTint="#21C6AA"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="0dp"
+        android:layout_gravity="center_horizontal"/>
+
+
+    <Button
+        android:id="@+id/bt_sign_in_Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="login"
         android:textSize="18sp"
         android:backgroundTint="#21C6AA"
         android:layout_marginTop="15dp"

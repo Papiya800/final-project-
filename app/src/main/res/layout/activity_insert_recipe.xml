@@ -15,6 +15,23 @@
         android:layout_gravity="center"
         android:layout_marginBottom="20dp" />
 
+    <ImageView
+        android:id="@+id/img_recipe_image"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        android:background="#FBF8F8"
+        android:layout_marginBottom="20dp" />
+
+    <Button
+        android:id="@+id/btn_choose_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose Image"
+        android:padding="16dp"
+        android:layout_marginBottom="20dp" />
+
     <EditText
         android:id="@+id/et_recipe_name"
         android:layout_width="match_parent"
