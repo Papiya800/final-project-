@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/txt_ingredients_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:text="Ingredients"
+                android:textColor="#6200EE"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_ingredients"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="20dp"
+                android:text="4 tbsp cooking oil\n\n¼ tsp salt\n\n¼ tsp turmeric\n\n2 medium potatoes, cut into small cubes\n\n2 medium onions, thinly sliced\n\n½ tsp salt\n\n7 cardamoms\n\n2 small sticks cinnamon\n\n8 cloves\n\n3 small bay leaves\n\n8-10 black peppercorns\n\n1 tbsp garlic paste\n\n1 tbsp ginger paste\n\n1 kg chicken, curry cut\n\n¾ tsp turmeric\n\n½ tsp red chili powder\n\n1 tsp Kashmiri chili powder\n\n1 tsp salt, to taste\n\n1½ tsp coriander powder\n\n1 tsp cumin powder\n\n½ tsp garam masala\n\n2 cups hot water, as needed\n\n¼ tsp roasted cumin\n\nA small pinch of sugar"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/txt_instructions_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:text="Instructions"
+                android:textColor="#6200EE"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_instructions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="20dp"
+                android:text="In a pan, heat 4 tbsp of cooking oil. Add ¼ tsp salt and ¼ tsp turmeric, mix well.\n\nAdd the cubed potatoes and fry until light brown. Set aside.\n\nIn the same pan, add the thinly sliced onions and ½ tsp salt. Sauté until golden.\n\nAdd cardamom, cinnamon sticks, cloves, bay leaves, and peppercorns. Sauté until aromatic.\n\nAdd a splash of water, then add the garlic and ginger paste. Sauté for 30-40 seconds until fragrant.\n\nAdd the chicken pieces and mix well. Add ¾ tsp turmeric, ½ tsp red chili powder, 1 tsp Kashmiri chili powder, and 1 tsp salt. Sauté for 5 minutes over medium heat.\n\nCover and cook for 5 minutes on low heat to allow the chicken to release its juices.\n\nOpen the lid, mix well, then add the coriander powder, cumin powder, and garam masala. Mix well, cover, and cook for 10 minutes on low heat, stirring occasionally.\n\nAdd the fried potatoes and mix. Add 2 cups of hot water as needed and adjust the seasoning. Cover and cook until the potatoes are tender, about 12-15 minutes, on low heat.\n\nFinish with ¼ tsp roasted cumin and a very small pinch of sugar. Mix well and serve."
+                android:textColor="#000000"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

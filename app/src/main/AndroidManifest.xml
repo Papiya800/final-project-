@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.finalproject">
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/img_2"
-        android:label="@string/app_name"
+        android:label="Recipe Mester"
         android:theme="@style/Theme.FinalProject">
+        <activity
+            android:name=".RiceRecipeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChickenCurryActivity"
+            android:exported="false" />
         <activity
             android:name=".RecipeListItemActivity"
             android:exported="false" />
@@ -32,8 +39,9 @@
             android:name=".DinnerActivity"
             android:exported="false" />
         <activity
-            android:name=".LunchActivity"
+            android:name=".LunchMenoActivity"
             android:exported="false" />
+
         <activity
             android:name=".BreakfastMenuActivity"
             android:exported="false" />

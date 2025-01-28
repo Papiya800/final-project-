@@ -32,7 +32,7 @@ public class RecipeCategoriesActivity extends AppCompatActivity {
         btnLunch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(RecipeCategoriesActivity.this, LunchActivity.class);
+                Intent intent = new Intent(RecipeCategoriesActivity.this, LunchMenoActivity.class);
                 startActivity(intent);
             }
         });

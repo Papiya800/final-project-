@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <!-- Ingredients Label -->
+            <TextView
+                android:id="@+id/txt_ingredients_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:text="Ingredients"
+                android:textColor="#6200EE"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- Ingredients Content -->
+            <TextView
+                android:id="@+id/txt_ingredients"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="20dp"
+                android:text="1 tbsp cooking oil\n\n1 tsp garlic paste\n\n1 tsp ginger paste\n\n250g thinly sliced chicken\n\n¼ tsp salt, plus more to taste\n\n¼ tsp pepper, plus more to taste\n\n1 tsp soy sauce\n\nAnother splash of cooking oil\n\n½ cup julienned carrots\n\n½ cup green beans, chopped\n\nPinch of salt\n\n1½ cups shredded cabbage\n\n¼ cup frozen peas\n\n1½ tbsp ghee\n\n1 small cinnamon stick\n\n4 cardamoms\n\n3 cloves\n\n1 bay leaf\n\n¼ cup cashews\n\n1½ tbsp raisins\n\n2 cups cooked rice\n\n1 tbsp white vinegar\n\n1½ tsp sugar\n\nSpring onions, finely chopped for garnish\n\nGreen chilies, finely chopped for garnish"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <!-- Instructions Label -->
+            <TextView
+                android:id="@+id/txt_instructions_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:text="Instructions"
+                android:textColor="#6200EE"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- Instructions Content -->
+            <TextView
+                android:id="@+id/txt_instructions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="20dp"
+                android:text="Heat 1 tbsp of cooking oil in a pan. Add the garlic and ginger pastes, stirring quickly in the hot oil.\n\nAdd the chicken slices, ¼ tsp salt, and ¼ tsp pepper. Mix well and cook for 3-4 minutes after adding 1 tsp soy sauce. Once cooked, set the chicken aside.\n\nIn the same pan, add another splash of oil, then toss in the carrots and green beans. Sprinkle with a pinch of salt and cook for 1-2 minutes.\n\nAdd the cabbage and frozen peas, and sauté on high heat for another minute. Set the vegetables aside.\n\nIn the same pan, add the ghee, cinnamon stick, cardamoms, cloves, and bay leaf. Stir until fragrant.\n\nAdd the cashews and raisins, cooking until the raisins plump up.\n\nStir in the cooked rice, white vinegar, sugar, and adjust salt and pepper to taste. Mix thoroughly.\n\nCombine the cooked vegetables and chicken back into the pan. Mix everything well to distribute flavors evenly.\n\nGarnish with finely chopped spring onions and green chilies."
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
