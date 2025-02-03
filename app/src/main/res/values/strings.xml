@@ -41,6 +41,7 @@
     <string name="steps">Steps</string>
     <string name="save_recipe">Save Recipe</string>
     <string name="breakfast_menu">Breakfast Menu</string>
+    <string name="recipe_image" />
 
 
 </resources>

@@ -17,6 +17,15 @@
         <activity
             android:name=".RecipeListItemActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".InsertRecipeActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".AdminHomeActivity"
+            android:exported="false"/>
+
         <activity
             android:name=".DeleteRecipeActivity"
             android:exported="false" />
@@ -56,8 +65,8 @@
         </activity>
         <activity android:name=".RegiLoginActivity" /> <!-- RegisterActivity -->
         <activity android:name=".RegisterActivity" /> <!-- AdminHomeActivity -->
-        <activity android:name=".AdminHomeActivity" />
-        <activity android:name=".InsertRecipeActivity" />
+        //
+       //
         <activity android:name=".RecipeCategoriesActivity" />
         <activity
             android:name=".QuesadillaActivity"

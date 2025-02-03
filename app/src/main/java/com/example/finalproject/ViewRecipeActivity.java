@@ -10,8 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ViewRecipeActivity extends AppCompatActivity {
-
-    private ListView listViewRecipes;
+    private ListView listViewrecipe;
     private DatabaseHelper databaseHelper;
 
     @Override
@@ -19,12 +18,12 @@ public class ViewRecipeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_recipe);
 
-        listViewRecipes = findViewById(R.id.list_view_recipes);
+        listViewrecipe = findViewById(R.id.recipe_list_item); // Corrected ID
         Button buttonUpdate = findViewById(R.id.button_update);
         Button buttonDelete = findViewById(R.id.button_delete);
         databaseHelper = new DatabaseHelper(this);
 
-        displayRecipes();
+        displayTechnologies();
 
         buttonUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,20 +43,18 @@ public class ViewRecipeActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        // Refresh the displayed recipes
-        displayRecipes();
+        displayTechnologies();
     }
 
-    private void displayRecipes() {
+    private void displayTechnologies() {
         try {
-            // Fetch all recipes from the database
             Cursor cursor = databaseHelper.getAllRecipes();
-
-            // Create RecipeAdapter instance
-            RecipeAdapter recipeAdapter = new RecipeAdapter(this, cursor);
-
-            // Set adapter to the ListView
-            listViewRecipes.setAdapter(recipeAdapter);
+            if (cursor != null) {
+                RecipeAdapter adapter = new RecipeAdapter(this, cursor, 0);
+                listViewrecipe.setAdapter(adapter);
+            } else {
+                Toast.makeText(this, "No recipes found", Toast.LENGTH_SHORT).show();
+            }
         } catch (Exception e) {
             e.printStackTrace();
             Toast.makeText(this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();

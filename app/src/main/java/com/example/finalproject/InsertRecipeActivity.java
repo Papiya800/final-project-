@@ -19,9 +19,11 @@ import java.io.IOException;
 
 public class InsertRecipeActivity extends AppCompatActivity {
 
-    private EditText etRecipeName, etRecipeDescription, etIngredients, etSteps;
     private ImageView imgRecipeImage;
-    private Button btnChooseImage, btnSaveRecipe;
+    private EditText etRecipeName;
+    private Button btnChooseImage;
+    private Button btnInsertRecipe;
+
     private DatabaseHelper databaseHelper;
     private byte[] imageByteArray;
 
@@ -32,19 +34,13 @@ public class InsertRecipeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert_recipe);
 
-        // Initialize UI elements
+        imgRecipeImage = findViewById(R.id.img_image);
         etRecipeName = findViewById(R.id.et_recipe_name);
-        etRecipeDescription = findViewById(R.id.et_recipe_description);
-        etIngredients = findViewById(R.id.et_ingredients);
-        etSteps = findViewById(R.id.et_steps);
-        imgRecipeImage = findViewById(R.id.img_recipe_image);
-        btnChooseImage = findViewById(R.id.btn_choose_image);
-        btnSaveRecipe = findViewById(R.id.btn_save_recipe);
+        btnChooseImage = findViewById(R.id.bt_choose_img);
+        btnInsertRecipe = findViewById(R.id.bt_inset_img);
 
-        // Initialize DatabaseHelper
         databaseHelper = new DatabaseHelper(this);
 
-        // Set up Image Picker
         imagePickerLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 result -> {
@@ -55,56 +51,57 @@ public class InsertRecipeActivity extends AppCompatActivity {
                             imgRecipeImage.setImageBitmap(imageBitmap);
                             imageByteArray = bitmapToByteArray(imageBitmap);
                         } catch (IOException e) {
+                            Toast.makeText(this, "Failed to load image", Toast.LENGTH_SHORT).show();
                             e.printStackTrace();
                         }
+                    } else {
+                        Toast.makeText(this, "No image selected", Toast.LENGTH_SHORT).show();
                     }
                 }
         );
 
-        // Choose Image Button Click Listener
-        btnChooseImage.setOnClickListener(v -> chooseImage());
-
-        // Save Recipe Button Click Listener
-        btnSaveRecipe.setOnClickListener(v -> saveRecipe());
+        btnChooseImage.setOnClickListener(view -> chooseImage());
+        btnInsertRecipe.setOnClickListener(view -> insertRecipe());
     }
 
-    // Launch the image picker
     private void chooseImage() {
         Intent pickIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         pickIntent.setType("image/*");
         imagePickerLauncher.launch(pickIntent);
     }
 
-    // Convert Bitmap to byte array
     private byte[] bitmapToByteArray(Bitmap bitmap) {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 50, byteArrayOutputStream);
         return byteArrayOutputStream.toByteArray();
     }
 
-    // Save Recipe into the database
-    private void saveRecipe() {
+    private void insertRecipe() {
         String recipeName = etRecipeName.getText().toString().trim();
-        String recipeDescription = etRecipeDescription.getText().toString().trim();
-        String ingredients = etIngredients.getText().toString().trim();
-        String steps = etSteps.getText().toString().trim();
 
-        if (recipeName.isEmpty() || recipeDescription.isEmpty() || ingredients.isEmpty() || steps.isEmpty() || imageByteArray == null) {
-            Toast.makeText(this, "Please fill all fields and select an image!", Toast.LENGTH_SHORT).show();
-        } else {
-            boolean isInserted = databaseHelper.insertRecipe(recipeName, recipeDescription, ingredients, steps, imageByteArray);
-            if (isInserted) {
-                Toast.makeText(this, "Recipe Saved Successfully!", Toast.LENGTH_LONG).show();
-
-                // Clear fields after saving
-                etRecipeName.setText("");
-                etRecipeDescription.setText("");
-                etIngredients.setText("");
-                etSteps.setText("");
-                imgRecipeImage.setImageResource(android.R.color.transparent);
-            } else {
-                Toast.makeText(this, "Error saving recipe!", Toast.LENGTH_SHORT).show();
-            }
+        if (recipeName.isEmpty()) {
+            Toast.makeText(this, "Please enter a recipe name", Toast.LENGTH_SHORT).show();
+            return;
         }
+
+        if (imageByteArray == null) {
+            Toast.makeText(this, "Please select an image", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        boolean isInserted = databaseHelper.insertRecipe(recipeName, imageByteArray);
+
+        if (isInserted) {
+            Toast.makeText(this, "Recipe inserted successfully!", Toast.LENGTH_SHORT).show();
+            clearFields();
+        } else {
+            Toast.makeText(this, "Insertion failed. Try again.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void clearFields() {
+        etRecipeName.setText("");
+        imgRecipeImage.setImageResource(R.drawable.placeholder_image); // Replace with your placeholder image
+        imageByteArray = null;
     }
 }
