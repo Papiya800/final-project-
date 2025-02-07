@@ -54,6 +54,11 @@
         <activity
             android:name=".BreakfastMenuActivity"
             android:exported="false" />
+
+<!--        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>-->
+
+
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
