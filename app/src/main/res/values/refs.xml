@@ -3,4 +3,5 @@
     <drawable name="default_recipe_image" />
     <drawable name="placeholder_image" />
     <drawable name="ser_img5" />
+    <drawable name="ic_placeholder" />
 </resources>

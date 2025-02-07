@@ -1,87 +1,86 @@
 package com.example.finalproject;
 
-import android.annotation.SuppressLint;
 import android.database.Cursor;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class DeleteRecipeActivity extends AppCompatActivity {
 
-    private static final int PICK_IMAGE_REQUEST = 1;
-
     private EditText editTextName;
-    private ImageView imageViewrecipe;
-    private Button buttonDelete;
-    private Button buttonSelectImage;
+    private ImageView imageViewRecipe;
     private Button buttonSearch;
-
+    private Button buttonDelete;
 
     private DatabaseHelper databaseHelper;
-    private byte[] productImageByteArray;
 
-    @SuppressLint("MissingInflatedId")
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delete_recipe);
 
         editTextName = findViewById(R.id.text_view_recipe_name);
-        imageViewrecipe = findViewById(R.id.image_view_recipe);
-
-        buttonDelete = findViewById(R.id.button_delete);
+        imageViewRecipe = findViewById(R.id.image_view_recipe);
         buttonSearch = findViewById(R.id.button_search);
-
+        buttonDelete = findViewById(R.id.button_delete);
 
         databaseHelper = new DatabaseHelper(this);
 
-        buttonSearch.setOnClickListener(view -> searchProduct());
-        buttonDelete.setOnClickListener(view -> deleteProduct());
+        buttonSearch.setOnClickListener(view -> searchRecipe());
+        buttonDelete.setOnClickListener(view -> deleteRecipe());
     }
 
-    private void searchProduct()
-    {
+    // Search recipe by name
+    private void searchRecipe() {
         String recipeName = editTextName.getText().toString().trim();
-        if (recipeName.isEmpty())
-        {
+
+        if (recipeName.isEmpty()) {
             Toast.makeText(this, "Please enter a recipe name to search", Toast.LENGTH_SHORT).show();
             return;
         }
 
-
+        // Query the database for the recipe by name
         Cursor cursor = databaseHelper.getRecipeByName(recipeName);
-        if (cursor != null && cursor.moveToFirst())
-        {
+
+        if (cursor != null && cursor.moveToFirst()) {
+            // Extract image data from the cursor
             byte[] image = cursor.getBlob(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_RECIPE_IMAGE));
 
-
-            if (image != null)
-            {
-                Bitmap bitmap = BitmapFactory.decodeByteArray(image, 0, image.length);
-                imageViewrecipe.setImageBitmap(bitmap);
-                productImageByteArray = image;
+            // Display the image if found
+            if (image != null) {
+                imageViewRecipe.setImageBitmap(BitmapFactory.decodeByteArray(image, 0, image.length));
             }
+
             cursor.close();
-        }
-        else
-        {
-            Toast.makeText(this, "Technology not found", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Recipe not found", Toast.LENGTH_SHORT).show();
         }
     }
 
-    private void deleteProduct()
-    {
-        String tecName = editTextName.getText().toString().trim();
+    // Delete the recipe
+    private void deleteRecipe() {
+        String recipeName = editTextName.getText().toString().trim();
 
-       // databaseHelper.DeleteRecipe(recipeName);
+        if (recipeName.isEmpty()) {
+            Toast.makeText(this, "Please enter a recipe name to delete", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Attempt to delete the recipe from the database
+        boolean isDeleted = databaseHelper.deleteRecipe(recipeName);
+
+        if (isDeleted) {
+            Toast.makeText(this, "Recipe deleted successfully", Toast.LENGTH_SHORT).show();
+            editTextName.setText("");  // Clear the input after deletion
+            imageViewRecipe.setImageDrawable(getResources().getDrawable(R.drawable.ser_img5));  // Reset image
+        } else {
+            Toast.makeText(this, "Failed to delete recipe", Toast.LENGTH_SHORT).show();
+        }
     }
-
 }

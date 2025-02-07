@@ -13,9 +13,8 @@ import android.widget.TextView;
 
 public class RecipeAdapter extends CursorAdapter {
 
-    // Constructor
     public RecipeAdapter(Context context, Cursor cursor, int flags) {
-        super(context, cursor, flags); // Use `flags` to specify behavior
+        super(context, cursor, flags);
     }
 
     @Override
@@ -26,19 +25,24 @@ public class RecipeAdapter extends CursorAdapter {
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
-        // Find views in the recipe_list_item layout
-        ImageView recipeImageView = view.findViewById(R.id.image_view_recipe);
-        TextView recipeNameTextView = view.findViewById(R.id.text_view_recipe_name); // Correct the TextView ID
+        TextView recipeNameTextView = view.findViewById(R.id.recipe_name);
+        ImageView recipeImageView = view.findViewById(R.id.recipe_image);
 
-        // Get data from the cursor
-        String name = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_TECH_NAME)); // Use COLUMN_TECH_NAME
-        byte[] imageBytes = cursor.getBlob(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_TECH_IMAGE));
+        // Retrieve the data from the cursor
+        String recipeName = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_RECIPE_NAME));
+        byte[] imageBytes = cursor.getBlob(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_RECIPE_IMAGE));
 
-        // Set recipe name
-        recipeNameTextView.setText(name);
+        // Set the data to the TextView
+        recipeNameTextView.setText(recipeName);
 
-        // Decode the image byte array and set it to the ImageView
-        Bitmap bitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length);
-        recipeImageView.setImageBitmap(bitmap);
+        // ImageBytes null
+        if (imageBytes != null && imageBytes.length > 0) {
+            // Convert byte[] to Bitmap
+            Bitmap bitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length);
+            recipeImageView.setImageBitmap(bitmap);
+        } else {
+
+            recipeImageView.setImageResource(R.drawable.placeholder_image);
+        }
     }
 }
